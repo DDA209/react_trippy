@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+// import ''
 
 class HomeContainer extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class HomeContainer extends React.Component {
         <div
           className='row'>
           <div
-            className={'col-lg-4 col-md-8 col-12'}>
+            className='col-lg-4 col-md-8 col-12'>
             <p>
               Je vérifie que les 2 mots : Voleur et <span style={{fontFamily: 'serif' }}>Voleur</span> ont une police d'écriture différente
             </p>

@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Material+Icons");
+
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
+
   /* src: url("https://fonts.googleapis.com/css?family=Montserrat"); */
-  src: url("https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Material+Icons");
   /* family=Montserrat:200,400,700|Material+Icons */
 }
 
