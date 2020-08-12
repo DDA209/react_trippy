@@ -30,7 +30,7 @@ class HomeContainer extends React.Component {
   render() {
     return (
       
-      <Home />
+      <Home cities={this.state.cities}/>
 
     );
   }

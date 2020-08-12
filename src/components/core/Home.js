@@ -14,6 +14,9 @@ class Home extends React.Component {
 
     render(){
         // console.log('components/containers/home#render this.state.cities', this.state.cities);
+        {if (this.props.cities.lenght > 0) {
+            console.log('component/core/Home#render this.props.cities', this.props.cities)
+        }}
 
         return(
             
@@ -23,6 +26,8 @@ class Home extends React.Component {
                 style={{
                     fontFamily: 'Montserrat'
                 }}>
+                    
+                
                 <Card />
 
                 <div
