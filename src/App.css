@@ -7,7 +7,10 @@
   /* family=Montserrat:200,400,700|Material+Icons */
 }
 
-
+body{
+  background-color: black;
+  color: rgb(184, 178, 104);
+}
 
 /* .App {
   text-align: center;

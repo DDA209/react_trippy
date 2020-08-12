@@ -9,9 +9,22 @@ import '../../App.css';
 
 class HomeContainer extends React.Component {
 
+  constructor(props){
+    super(props)
+
+    this.state = {
+      cities: [],
+  };
+
+  }
+
   componentDidMount(){
-    const qqchose = Api.getHome()
-    console.log('containers/HomeContainers #componentDidMount Api.getHome()', qqchose)
+    const cities = Api.getHome();
+    this.setState({
+      cities
+    })
+    console.log('components/containers/HomeContainer#componentDidMount Api.getHome()', this.state.cities)
+    
   }
 
   render() {

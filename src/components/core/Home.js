@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../city/Card'
 
 class Home extends React.Component {
 
@@ -12,14 +13,18 @@ class Home extends React.Component {
     }
 
     render(){
-        console.log('components/containers/home#render this.state.cities', this.state.cities);
+        // console.log('components/containers/home#render this.state.cities', this.state.cities);
 
         return(
+            
+            
             <div
                 className='container-fluid'
                 style={{
                     fontFamily: 'Montserrat'
                 }}>
+                <Card />
+
                 <div
                     className='row'>
                     <div
