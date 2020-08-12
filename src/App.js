@@ -6,8 +6,8 @@ import {
   Link
 } from 'react-router-dom';
 
-// import HomeContainer from './components/containers/HomeContainer';
-import Home from './components/containers/Home';
+
+import HomeContainer from './components/containers/HomeContainer';
 import TemplateContainer from './components/containers/TemplateContainer';
 
 import './App.css';
@@ -32,8 +32,7 @@ class App extends React.Component{
               <TemplateContainer />
             </Route>
             <Route path="/">
-              {/* <HomeContainer /> */}
-              <Home />
+              <HomeContainer />
             </Route>
           </Switch>
         </div>
