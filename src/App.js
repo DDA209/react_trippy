@@ -28,12 +28,31 @@ class App extends React.Component{
             </ul>
           </nav>
           <Switch>
+
             <Route path="/template">
               <TemplateContainer />
             </Route>
+
+            <Route path="/hotels">
+              <TemplateContainer />
+            </Route>
+
+            <Route path="/restaurants">
+              <TemplateContainer />
+            </Route>
+
+            <Route path="/login">
+              <TemplateContainer />
+            </Route>
+
+            <Route path="/signup">
+              <TemplateContainer />
+            </Route>
+
             <Route path="/">
               <HomeContainer />
             </Route>
+
           </Switch>
         </div>
       </Router>

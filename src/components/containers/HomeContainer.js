@@ -13,6 +13,7 @@ class HomeContainer extends React.Component {
     super(props)
 
     this.state = {
+<<<<<<< HEAD
       cities: []
     }
   }
@@ -39,6 +40,20 @@ class HomeContainer extends React.Component {
   }
   componentDidMount(){
 
+=======
+      cities: [],
+  };
+
+  }
+
+  componentDidMount(){
+    const cities = Api.getHome();
+    this.setState({
+      cities
+    })
+    console.log('components/containers/HomeContainer#componentDidMount Api.getHome()', this.state.cities)
+    
+>>>>>>> 4085e94b39a23ee0aafa63370bd172ef85d2e2a7
   }
 
   // componentDidMount(){
@@ -61,6 +76,7 @@ class HomeContainer extends React.Component {
     console.log('components/containers/HomeContainer#render this.state.cities', this.state.cities)
     return (
       
+<<<<<<< HEAD
       // <Home />
       <div>
         {this.state.cities.map((city, index) => {
@@ -69,6 +85,9 @@ class HomeContainer extends React.Component {
           )
         })}
       </div>
+=======
+      <Home cities={this.state.cities}/>
+>>>>>>> 4085e94b39a23ee0aafa63370bd172ef85d2e2a7
 
     );
   }
