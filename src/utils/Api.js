@@ -4,7 +4,10 @@ class Api {
         fetch('http://localhost:3001/api/home')
         .then( (resp) => resp.json() )
         .then( (json) => {
-            console.log('utils/api#getHome json', json);
+            const cities = json.cities
+            this.setState({
+            cities
+            });
         });
     }
 }
