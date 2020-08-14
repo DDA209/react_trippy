@@ -39,9 +39,6 @@ class HomeContainer extends React.Component {
   }
   componentDidMount(){
 
-    
-    
-
   }
 
   // componentDidMount(){
