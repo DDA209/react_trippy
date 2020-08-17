@@ -13,11 +13,15 @@ class Card extends React.Component{
     }
 
 
+
     render(){
+        
         return(
             <div>
-                <img src={this.state.source} class="card-img-top" alt={'photo de ' + this.state.name} />
-                <p>{this.state.name}</p>
+                <div>
+                    <img src={`http://localhost:3001${this.props.source}`} class="card-img-top" alt={'photo de ' + this.state.name} />
+                    <p>{this.state.name}</p>
+                </div>
             </div>
         );
     }

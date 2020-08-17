@@ -1,47 +1,97 @@
 import React from 'react';
-import Card from '../city/Card'
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Link
+} from 'react-router-dom';
+
+import Card from '../city/Card';
 
 class Home extends React.Component {
 
     constructor(props){
-
-        super(props);
+        super(props)
 
         this.state = {
-            cities: [],
-        };
+        cities: []
+        }
     }
+
+
+    componentDidMount(){
+        fetch('http://localhost:3001/api/home')
+        .then(resp => resp.json())
+        .then(json => {
+        const cities = json.cities
+        this.setState({
+            cities
+        });
+        
+        console.log('components/containers/HomeContainer#componentDidMount this.state.cities',this.state.cities);
+
+        })
+    }
+
+  
 
     render(){
         // console.log('components/containers/home#render this.state.cities', this.state.cities);
-        {if (this.props.cities.lenght > 0) {
-            console.log('component/core/Home#render this.props.cities', this.props.cities)
-        }}
+        // {if (this.props.cities.lenght > 0) {
+        //     console.log('component/core/Home#render this.props.cities', this.props.cities)
+        // }}
 
         return(
             
             
             <div
-                className='container-fluid'
+                className='container'
                 style={{
                     fontFamily: 'Montserrat'
                 }}>
                     
                 
-                <Card />
+                <div className='row'>
+                    
+                    <div className='col-6 col-md-3'>
+                        <Router>
+                            {this.state.cities.map((city, index) => {
+                                return(
+                                    <Link to ={`/hotels?city=${city.slug}`}
+                                        key={index}
+                                    >
+                                        <Card
+                                            name = {city.name}
+                                            source = {city.source}
+                                        >
+                                        </Card>
 
-                <div
-                    className='row'>
-                    <div
-                        className='col-lg-4 col-md-8 col-12'>
-                        <p>
-                            Je vérifie que les 2 mots : Voleur et <span style={{fontFamily: 'serif' }}>Voleur</span> ont une police d'écriture différente
-                        </p>
+                                    </Link>
+                                )
+                            })}
+
+                            <Switch>
+                            {this.state.cities.map((city, index) => {
+                                return(
+                                    <Route
+                                        key = {index}
+                                        path={`/hotels?city=${city.slug}`}
+                                    >
+
+                                    </Route>
+                                )
+                            })}
+                            </Switch>
+                        </Router>  
                     </div>
-                    <div
-                        className='col-lg-8 col-md-4 col-12'>
-                        Une autre phrase
+
+
+                    <div>
+                        
+                              
+                         
                     </div>
+
                 </div>
             </div>
         );
