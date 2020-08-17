@@ -2,8 +2,7 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Switch,
-    Link
+    Switch
 } from 'react-router-dom';
 
 import Card from '../city/Card';
@@ -53,45 +52,36 @@ class Home extends React.Component {
                 
                 <div className='row'>
                     
-                    <div className='col-6 col-md-3'>
-                        <Router>
-                            {this.state.cities.map((city, index) => {
-                                return(
-                                    <Link to ={`/hotels?city=${city.slug}`}
-                                        key={index}
-                                    >
-                                        <Card
-                                            name = {city.name}
-                                            source = {city.source}
-                                        >
-                                        </Card>
+                    
+                    <Router>
+                        {this.state.cities.map((city, index) => {
+                            return(
+                                
+                                <Card
+                                    key = {index}
+                                    name = {city.name}
+                                    source = {city.source}
+                                    slug = {city.slug}
+                                >
+                                </Card>
 
-                                    </Link>
-                                )
-                            })}
+                            )
+                        })}
 
-                            <Switch>
-                            {this.state.cities.map((city, index) => {
-                                return(
-                                    <Route
-                                        key = {index}
-                                        path={`/hotels?city=${city.slug}`}
-                                    >
+                        <Switch>
+                        {this.state.cities.map((city, index) => {
+                            return(
+                                <Route
+                                    key = {index}
+                                    path = {`/hotels?city=${city.slug}`}
+                                >
 
-                                    </Route>
-                                )
-                            })}
-                            </Switch>
-                        </Router>  
-                    </div>
-
-
-                    <div>
-                        
-                              
-                         
-                    </div>
-
+                                </Route>
+                            )
+                        })}
+                        </Switch>
+                    </Router>  
+                    <Card/> {/* Carte de test */}
                 </div>
             </div>
         );

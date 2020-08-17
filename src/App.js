@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -10,6 +11,7 @@ import {
 import HomeContainer from './components/containers/HomeContainer';
 import TemplateContainer from './components/containers/TemplateContainer';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends React.Component{
