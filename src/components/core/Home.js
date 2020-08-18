@@ -2,8 +2,7 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Switch,
-    Link
+    Switch
 } from 'react-router-dom';
 
 import Card from '../city/Card';
@@ -58,17 +57,13 @@ class Home extends React.Component {
                         {this.state.cities.map((city, index) => {
                             return(
                                 
-                                <Link
+                                <Card
                                     key = {index}
-                                    to={`http://localhost:3001${city.source}`}
+                                    name = {city.name}
+                                    source = {`http://localhost:3001${city.source}`}
+                                    slug = {`hotels?city=${city.slug}`}
                                 >
-                                    <Card
-                                        name = {city.name}
-                                        source = {`http://localhost:3001${city.source}`}
-                                        slug = {city.slug}
-                                    >
-                                    </Card>
-                                </Link>
+                                </Card>
                             )
                         })}
 
