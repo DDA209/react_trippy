@@ -2,7 +2,8 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Switch
+    Switch,
+    Link
 } from 'react-router-dom';
 
 import Card from '../city/Card';
@@ -57,30 +58,38 @@ class Home extends React.Component {
                         {this.state.cities.map((city, index) => {
                             return(
                                 
-                                <Card
+                                <Link
                                     key = {index}
-                                    name = {city.name}
-                                    source = {city.source}
-                                    slug = {city.slug}
+                                    to={`http://localhost:3001${city.source}`}
                                 >
-                                </Card>
-
+                                    <Card
+                                        name = {city.name}
+                                        source = {`http://localhost:3001${city.source}`}
+                                        slug = {city.slug}
+                                    >
+                                    </Card>
+                                </Link>
                             )
                         })}
 
                         <Switch>
-                        {this.state.cities.map((city, index) => {
-                            return(
-                                <Route
-                                    key = {index}
-                                    path = {`/hotels?city=${city.slug}`}
-                                >
 
+                            {this.state.cities.map((city, index) => {
+
+                                return(
+                            
+                                <Route 
+                                    key = {index}
+                                    path={`http://localhost:3001${city.source}`}
+                                >
                                 </Route>
-                            )
-                        })}
+
+                                )
+                            })}
+
                         </Switch>
-                    </Router>  
+                    </Router>
+
                     <Card/> {/* Carte de test */}
                 </div>
             </div>

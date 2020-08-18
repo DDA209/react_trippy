@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 
-import {
-    BrowserRouter as Link
-} from 'react-router-dom';
-
 const Container = styled.div`
 
 `;
@@ -36,14 +32,8 @@ class Card extends React.Component{
             return(                                
                 
                 <Container className='col-6 col-md-3'>
-
-                    <Link to ={`/hotels?city=${this.props.slug}`}>
-
-                        <img src={`http://localhost:3001${this.props.source}`} className="card-img-top" alt={'photo de ' + this.props.name} />
-                        <p>{this.props.name}</p>
-                    
-                    </Link>
-
+                    <img src={this.props.source} className="card-img-top" alt={'photo de ' + this.props.name} />
+                    <p>{this.props.name}</p>
                 </Container>
             
             );
