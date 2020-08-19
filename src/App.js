@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Link
 } from 'react-router-dom';
-
+import styled from 'styled-components';
 import HomeContainer from './components/containers/HomeContainer';
 import TemplateContainer from './components/containers/TemplateContainer';
+import Global from './Global';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
