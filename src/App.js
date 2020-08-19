@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styled from 'styled-components';
 import {
   BrowserRouter as Router,
   Route,
@@ -7,28 +7,37 @@ import {
   Link
 } from 'react-router-dom';
 
-
 import HomeContainer from './components/containers/HomeContainer';
 import TemplateContainer from './components/containers/TemplateContainer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+
+const Nav = styled.nav`
+  background-color: Global.color.primary;
+  color: white;
+`;
+
+
 class App extends React.Component{
   render(){
     return(
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li><Link to ="/">Trippy</Link></li>
-              <li><Link to ="/template">template</Link></li>
-              <li><Link to ="/hotels">Hotels</Link></li>
-              <li><Link to ="/restaurants">Restaurants</Link></li>
-              <li><Link to ="/login">Login</Link></li>
-              <li><Link to ="/signup">Signup</Link></li>
-            </ul>
-          </nav>
+          <Nav className="navbar navbar-expand-lg" styled>
+          <Link className="navbar-brand" to ="/">Trippy</Link>
+            <div class="collapse navbar-collapse">
+              <ul className="navbar-nav mr-auto">
+                
+                <li className="nav-item"><Link className="nav-link" to ="/template">template</Link></li>
+                <li className="nav-item"><Link className="nav-link" to ="/hotels">Hotels</Link></li>
+                <li className="nav-item"><Link className="nav-link" to ="/restaurants">Restaurants</Link></li>
+                <li className="nav-item"><Link className="nav-link" to ="/login">Login</Link></li>
+                <li className="nav-item"><Link className="nav-link" to ="/signup">Signup</Link></li>
+              </ul>
+            </div>
+          </Nav>
           <Switch>
 
             <Route path="/template">

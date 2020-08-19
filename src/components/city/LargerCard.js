@@ -35,7 +35,7 @@ class Card extends React.Component{
 
             return(                                
                 
-                <Container className='col-12 col-md-6'>
+                <Container className="col-12 col-md-6">
                     <Link
                         to={this.props.slug}
                     >

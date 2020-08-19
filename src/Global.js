@@ -19,7 +19,7 @@ const Global = {
         navbar: 50
     },
 
-    weight: = {
+    weight: {
         body: 400,
         caption: 200,
         header: 700

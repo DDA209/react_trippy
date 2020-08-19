@@ -12,54 +12,31 @@ const Container = styled.div`
 
 class Card extends React.Component{
 
-    // constructor(props){
-    //     super(props)
-
-    //     this.state = {
-
-    //     }
-    // }
-
-
 
     render(){
 
+        const {source, name, slug} = this.props // Destructuration
 
-        // if (this.props.cities.length > 0){
-
-            // this.setState({
-            //     name: this.props.cities[0].name,
-            //     slug: this.props.cities[0].slug,
-            //     source: this.props.cities[0].source
-            // })
-
-            console.log('components/city/Card#render this.props.cities', this.props.cities);
-            // console.log('components/city/Card#render this.props.cities[0].slug', this.props.cities[0].slug);
-            // console.log('components/city/Card#render this.props.cities[0].source', this.props.cities[0].source);
-
-        // if (this.props.cities.length >0 ) {
+        return(                                
                 
-            return(                                
-                
-                <Container className='col-6 col-md-3'>
+            <Container className='col-6'>
 
-                    <Link
-                        to={this.props.slug}
-                    >
-                        <div>
-                            <img src={this.props.source} className="card-img-top" alt={'photo de ' + this.props.name} />
-                            {/* <img src={this.props.source} className="card-img-top" alt={'photo de ' + this.props.name} /> */}
-                            <p>{this.props.name}</p>
-                        </div>
+                <Link
+                    to={slug}
+                >
+                    <div>
+                        <img 
+                            src={source}
+                            className="card-img-top"
+                            alt={'photo de ' + name}
+                        />
+                           <p>{name}</p>
+                    </div>
 
-                    </Link>
+                </Link>
 
-                </Container>
-            
-            );
-        // };
-
-        // return null
+            </Container>
+        );
 
     }
 }
