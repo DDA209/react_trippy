@@ -33,24 +33,34 @@ class Card extends React.Component{
             //     source: this.props.cities[0].source
             // })
 
+            console.log('components/city/Card#render this.props.cities', this.props.cities);
+            // console.log('components/city/Card#render this.props.cities[0].slug', this.props.cities[0].slug);
+            // console.log('components/city/Card#render this.props.cities[0].source', this.props.cities[0].source);
+
+        // if (this.props.cities.length >0 ) {
+                
             return(                                
                 
                 <Container className='col-6 col-md-3'>
+
                     <Link
                         to={this.props.slug}
                     >
                         <div>
                             <img src={this.props.source} className="card-img-top" alt={'photo de ' + this.props.name} />
+                            {/* <img src={this.props.source} className="card-img-top" alt={'photo de ' + this.props.name} /> */}
                             <p>{this.props.name}</p>
                         </div>
 
                     </Link>
+
                 </Container>
             
             );
         // };
 
         // return null
+
     }
 }
 

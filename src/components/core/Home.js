@@ -58,6 +58,7 @@ class Home extends React.Component {
                             return(
                                 
                                 <Card
+                                    cities = {this.state.cities}
                                     key = {index}
                                     name = {city.name}
                                     source = {`http://localhost:3001${city.source}`}
